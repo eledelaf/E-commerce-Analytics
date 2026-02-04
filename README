@@ -1,0 +1,23 @@
+1. Understand what data do I have
+    a. Sales Target:
+        - Month of Order Data: "Apr-18, May-18"
+        - Category: str, {Furniture, Clothing, Electronics}
+        - Target: float 
+    
+    b. Order Details
+    What is the difference between Amount and Quantity?
+        - Order ID: B-00000
+        - Amount: float 
+        - Profit: float
+        - Quantity: int 
+        - Category: str 
+        - Sub-Category: str 
+
+    c. List of Orders
+        - Order ID: B-00000
+        - Order Date: Date
+        - CustomerName: Str
+        - State: str
+        - City: str 
+
+2. Do I need to clean the data?
