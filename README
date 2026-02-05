@@ -1,10 +1,18 @@
+0. Definition of the bussiness case 
+    - Are we meeting the targets?
+    - Which are the products that are more profitable? 
+    - Time series of the revenue, and why it changes?
+    - Which are the most loyal customers?(which city? New customers are the returning? High spending vs low spending?)
+
 1. Understand what data do I have
     a. Sales Target:
-        - Month of Order Data: "Apr-18, May-18"
+    Each line is a target for a month and a Category
+        - Month of Order Data: Month + Year, "Apr-18, May-18"
         - Category: str, {Furniture, Clothing, Electronics}
         - Target: float 
     
     b. Order Details
+
     What is the difference between Amount and Quantity?
         - Order ID: B-00000
         - Amount: float 
