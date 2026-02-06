@@ -28,4 +28,51 @@
         - State: str
         - City: str 
 
-2. Do I need to clean the data?
+2. Structure of the repository 
+    a. Data folder with raw and processed data
+    b. sql folder with queries and scripts for data processing and analysis
+    c. docs folder with documentation and reports, definitiosn of KPI
+    d. README file with project overview and instructions
+
+3. Do I need to clean the data?
+    Import the csv files
+    Normalise column names, check for missing values, and handle inconsistencies.
+    Create clean views for each dataset.
+
+4. Define the KPIs (Key Performance Indicators) for the business
+    (inside the docs folder)
+    - Revenue (gross vs net si aplica)
+    - Profit / margin
+    - AOV = revenue / nº pedidos
+    - Customers (distinct), new vs returning
+    - Retention rate
+    - Churn (definición operativa en e-commerce: “no compra en X días”)
+
+5. Create view helpers (tablar metricas)
+    - customer_first_order (primera compra por cliente)
+    - orders_enriched (pedido con métricas: revenue, items, etc.)
+    - monthly_customer_activity (cliente x mes: compró o no)
+    - cohorts (cohort = mes de primera compra)
+
+6. Queries that answer business questions
+    1. Revenue y profit por mes (trend + MoM con LAG)
+    2. AOV y nº pedidos por mes
+    3. New vs returning customers por mes
+    4. Cohort retention mensual (tabla cohort)
+    5. Churn rate (X días sin compra) por mes/cohort
+    6. Top categorías por crecimiento (rank con window)
+    7. Productos “héroes” vs “villanos” (profit vs volumen)
+    8. Basket size: items por pedido (distribución básica)
+    9. Concentración: % revenue top 10% clientes (pareto)
+    10. Tiempo entre compras (avg days between orders con LAG)
+    11. Target vs actual (si tienes targets)
+    12. “At risk” customers (no compra en 60–90 días) y tamaño del problema
+
+7. README: “preguntas → queries → conclusiones → decisiones”
+    Estructure of the README FILE:
+    Contexto (2–3 líneas)
+    Dataset + schema (mini diagrama o bullets)
+    Definiciones de KPI
+    Tabla “Question → SQL file → Key finding → Decision”
+    5–8 insights con bullets (con números)
+    “How to run” (DuckDB + comandos) 
