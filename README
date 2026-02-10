@@ -12,17 +12,16 @@
         - Target: float 
     
     b. Order Details
-
-    What is the difference between Amount and Quantity?
-        - Order ID: B-00000
-        - Amount: float 
-        - Profit: float
-        - Quantity: int 
-        - Category: str 
-        - Sub-Category: str 
+    each row is basically a line item inside an order
+        - Order ID: B-00000, order id
+        - Amount: float, the total sales value (Amount ≈ Quantity × unit selling price)
+        - Profit: float, Amount minus cost
+        - Quantity: int, how many units were sold 
+        - Category: str, self explanatorio
+        - Sub-Category: str, self explinatorio 
 
     c. List of Orders
-        - Order ID: B-00000
+        - Order ID: B-00000, order id
         - Order Date: Date
         - CustomerName: Str
         - State: str
