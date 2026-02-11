@@ -38,6 +38,25 @@
     Normalise column names, check for missing values, and handle inconsistencies.
     Create clean views for each dataset.
 
+    Data cleaning here is not “fixing everything until it looks nice”. It is:
+    1. Preserving the raw data
+    Never overwrite raw CSVs.
+    Load them into raw.* tables exactly as-is.
+
+    2. Making a staging layer (stg.*)
+    This is where we do the “mechanical” cleaning:
+    standardise names (snake_case)
+    trim text (remove hidden spaces)
+    parse dates properly
+    cast types (numbers as numbers)
+    drop truly empty rows (e.g., missing order_id)
+
+    3. Building a clean analytics layer (clean.*)
+    This is where we model for analysis / Power BI:
+    reliable keys (order_id, customer_id, product/category)
+    fact table(s) + dimensions (star schema)
+    final business rules documented (what is revenue, what is churn, etc.)
+
 4. Define the KPIs (Key Performance Indicators) for the business
     (inside the docs folder)
     - Revenue (gross vs net si aplica)
